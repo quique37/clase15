@@ -1,3 +1,11 @@
+/*
 const { exec } = require('child_process')
-exec('command', (err, stdout, stderr))
+exec('git',['branch'] (err, stdout, stderr))
 	console.log(stdout)
+*/
+    var  exec = require('child_process').exec,
+gitbranch = exec('git', ['branch'])
+
+gitbranch.stdout.on('data', function (data) {
+  console.log('gitbranch stdout: ' + data)
+})
